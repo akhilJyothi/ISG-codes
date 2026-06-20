@@ -4,6 +4,9 @@
 //assignments are used so that ffs are not created and this is directly
 //displayed.
 
+// pure distinction is made --> lights: output, states: memory
+                                ------------------------------
+                                ------------------------------
 module modtraffic (
 clk, light
 );
