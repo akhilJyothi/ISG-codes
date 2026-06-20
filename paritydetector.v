@@ -3,6 +3,12 @@
 //the continuos stream bit is fed in sync with the clk.
 //even-->1   ; odd-->0
 
+
+// MOORE MACHINE
+// this is actually a moore machine as the output depends only on the state
+// and not  the inputs
+
+
 module paritydetector (x, clk,parity );
     input x;//wire as this gives something that's driven continuosly from outside
     input clk;
@@ -23,6 +29,11 @@ module paritydetector (x, clk,parity );
             even: parity= 1;// and here only the states are saved in latches
             odd: parity=0;
             default: parity=1;
+
+            // even: parity<= x? 0:1;
+            // odd:  parity<= x? 1:0;
+            // this would have been the case if this was a mealy machine
+            // output dependend on both input and state
         endcase
     end
 
